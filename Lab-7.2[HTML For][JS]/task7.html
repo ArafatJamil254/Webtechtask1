@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Profile Picture Validation</title>
+    <script>
+        function validate() {
+            var userid = document.getElementById("userid").value;
+            var picture = document.getElementById("picture").value;
+
+            if (userid == "") {
+                alert("User Id cannot be empty");
+                return false;
+            }
+
+            if (isNaN(userid) || parseInt(userid) <= 0) {
+                alert("User Id must be a positive number");
+                return false;
+            }
+
+            if (picture == "") {
+                alert("Picture cannot be empty");
+                return false;
+            }
+
+            alert("Valid Profile Picture");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate()">
+        <fieldset style="width:300px;">
+            <legend>Profile Picture</legend>
+
+            User Id
+            <input type="text" id="userid" name="userid">
+            <br><br>
+
+            Picture
+            <input type="file" id="picture" name="picture">
+
+            <br><br><hr><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</body>
+</html>
