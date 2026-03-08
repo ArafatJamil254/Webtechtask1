@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Basic Calculator</title>
+
+    <script>
+        function insertValue(value) {
+            document.getElementById("display").value =
+                document.getElementById("display").value + value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            let expression = document.getElementById("display").value;
+            let result = eval(expression);
+            document.getElementById("display").value = result;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="display" name="display">
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="insertValue('7')"></td>
+                <td><input type="button" value="8" onclick="insertValue('8')"></td>
+                <td><input type="button" value="9" onclick="insertValue('9')"></td>
+                <td><input type="button" value="/" onclick="insertValue('/')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="4" onclick="insertValue('4')"></td>
+                <td><input type="button" value="5" onclick="insertValue('5')"></td>
+                <td><input type="button" value="6" onclick="insertValue('6')"></td>
+                <td><input type="button" value="*" onclick="insertValue('*')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="1" onclick="insertValue('1')"></td>
+                <td><input type="button" value="2" onclick="insertValue('2')"></td>
+                <td><input type="button" value="3" onclick="insertValue('3')"></td>
+                <td><input type="button" value="-" onclick="insertValue('-')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="0" onclick="insertValue('0')"></td>
+                <td><input type="button" value="C" onclick="clearDisplay()"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+                <td><input type="button" value="+" onclick="insertValue('+')"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
