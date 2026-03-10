@@ -1,6 +1,41 @@
 <html>
 <head>
     <title>Tic-Tac-Toe Game</title>
+
+    <script>
+        var board = ["", "", "", "", "", "", "", "", ""];
+        var currentPlayer = "X";
+        var gameOver = false;
+
+        function initializeGame() {
+            var cells = document.getElementsByClassName("cell");
+
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].addEventListener("click", handleClick);
+            }
+
+            document.getElementById("status").innerHTML = "Current Player: " + currentPlayer;
+        }
+
+
+
+        function resetGame() {
+            board = ["", "", "", "", "", "", "", "", ""];
+            currentPlayer = "X";
+            gameOver = false;
+
+            var cells = document.getElementsByClassName("cell");
+
+            for (var i = 0; i < cells.length; i++) {
+                cells[i].innerHTML = "";
+                cells[i].style.backgroundColor = "";
+            }
+
+            document.getElementById("status").innerHTML = "Current Player: " + currentPlayer;
+        }
+
+        window.onload = initializeGame;
+    </script>
 </head>
 <body>
     <h2>Tic-Tac-Toe Game</h2>
